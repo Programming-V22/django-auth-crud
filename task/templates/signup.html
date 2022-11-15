@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 mt-5">
+            <form action="/signup/" class="card card-body "
+                method="post">
+                <h1 class="text-center ">SingUP</h1>
+                {{ error }}
+                <!-- es una variable de jinja que permite html{{ csrf_token }}-->
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" id="username"
+                        class="form-control" placeholder="Write your Username"
+                        required>
+                </div>
+                <div class="mb-3">
+                    <label for="password1">Password:</label>
+                    <input type="password" name="password1" id="password1"
+                        class="form-control" placeholder="Write your password"
+                        required>
+                </div>
+                <div class="mb-3">
+                    <label for="password2">Confirm your Password:</label>
+                    <input type="password" name="password2" id="password2"
+                        class="form-control" placeholder="Confirm your
+                        Password" required>
+                </div>
+                <button class="btn btn-primary">
+                    SingUP
+                </button>
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock content %}
